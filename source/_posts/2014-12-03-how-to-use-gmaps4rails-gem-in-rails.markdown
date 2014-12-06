@@ -99,7 +99,9 @@ Now this will not render the map, since you have not used initialize function an
         <div id="map"></div>
     </body>
 
-Although easy to understand, having an onload event within a <body> tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. You can do so by replacing the inline onload event handler with a DOM listener within your Maps API JavaScript code like so:
+>Although easy to understand, having an onload event within a <body> tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. 
+
+You can do so by replacing the inline onload event handler with a DOM listener within your Maps API JavaScript code like so:
 
     <script>
         function initialize() {
@@ -114,4 +116,14 @@ Although easy to understand, having an onload event within a <body> tag mixes co
 And that's it. Your map should be visible. REFRESH!!
 
 ## Common Gotchas
+
+###Map does not load without full page refresh 
+
+The issue is related to use of turbolinks gem in rails apps. 
+
+The key to getting something to work with turbolinks, is to use the provided callbacks. In this case, one has to tell gmaps4rails to perform the map loading when turbolinks has loaded a new page.
+
+This can be done by adding a listener, for the turbolinks event `page:load`, to map initialization.
+
+    google.maps.event.addDomListener(window, 'page:load', initialize);
 

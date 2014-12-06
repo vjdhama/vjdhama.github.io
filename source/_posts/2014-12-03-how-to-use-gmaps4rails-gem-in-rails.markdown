@@ -99,7 +99,7 @@ You can customize the map using different [options](https://developers.google.co
 
 ## Render Map
 
-Now this will not render the map, since you have not used initialize function anywhere. You can trigger the code using `window.onload` once the page is fully loaded, handled within a '<body>' tag. 
+Now this will not render the map, since you have not used initialize function anywhere. You can trigger the code using `window.onload` once the page is fully loaded, handled within a `body` tag. 
 
 ``` html
 <script>

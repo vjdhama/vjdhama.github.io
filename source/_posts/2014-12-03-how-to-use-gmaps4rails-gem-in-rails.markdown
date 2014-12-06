@@ -4,9 +4,11 @@ title: "How to add google maps in rails"
 date: 2014-12-03 01:31:08 +0530
 comments: true
 categories: ['ruby', 'google maps']
+keywords: tutorial, google maps, gmaps4rails, turbolinks
+description: How to use gmaps4rails gem for generating google maps
 ---
 
-Today I hope to clear basic concepts related to integrating `Gmaps4Rails` gem and google maps in general. I will also discuss some common gotchas related to it.
+Today I hope to clear basic concepts related to integrating google maps in rails app. We will be using `Gmaps4Rails` gem for it. I will also discuss some common gotchas related to it.
 
 ## First things first
 
@@ -37,7 +39,7 @@ To use maps you have to wrap it in a `div` tag. This is how it should look like.
         <div id="map"></div>
     </div>
 
-
+    
 ## Map Generation Script
 
 
@@ -99,7 +101,7 @@ Now this will not render the map, since you have not used initialize function an
         <div id="map"></div>
     </body>
 
->Although easy to understand, having an onload event within a <body> tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. 
+Although easy to understand, having an onload event within a <body> tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. 
 
 You can do so by replacing the inline onload event handler with a DOM listener within your Maps API JavaScript code like so:
 
@@ -117,13 +119,13 @@ And that's it. Your map should be visible. REFRESH!!
 
 ## Common Gotchas
 
-###Map does not load without full page refresh 
+- Map does not load without full page refresh 
 
 The issue is related to use of turbolinks gem in rails apps. 
-
 The key to getting something to work with turbolinks, is to use the provided callbacks. In this case, one has to tell gmaps4rails to perform the map loading when turbolinks has loaded a new page.
 
 This can be done by adding a listener, for the turbolinks event `page:load`, to map initialization.
 
     google.maps.event.addDomListener(window, 'page:load', initialize);
 
+This will fix the turbolinks bug.

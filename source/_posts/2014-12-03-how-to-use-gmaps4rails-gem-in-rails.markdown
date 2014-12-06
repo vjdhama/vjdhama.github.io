@@ -78,7 +78,7 @@ initialize = function() {
 };
 ```
 
-You can use a custom marker using a `picture` property.
+You can use a custom marker using a picture options hash.
 
 ``` javascript
 markers = handler.addMarkers([
@@ -99,7 +99,7 @@ You can customize the map using different [options](https://developers.google.co
 
 ## Render Map
 
-Now this will not render the map, since you have not used initialize function anywhere. You can trigger the code using `window.onload` once the page is fully loaded, handled within a `body` tag. 
+Now this will not render the map, since you have not used initialize function anywhere. You can trigger the code using `window.onload` once the page is fully loaded, handled within a body tag. 
 
 ``` html
 <script>
@@ -140,9 +140,7 @@ The key to getting something to work with turbolinks, is to use the provided cal
 This can be done by adding a listener, for the turbolinks event `page:load`, to map initialization.
 
 ``` javascript
-
 google.maps.event.addDomListener(window, 'page:load', initialize);
-
 ```
 
 This will fix the turbolinks bug.

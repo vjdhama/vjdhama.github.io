@@ -6,4 +6,6 @@ comments: true
 categories: [blog, ruby] 
 ---
 
-This is my blog post.
+### Hey there!!
+
+Well! welcome to my series of blogs about everything I learn day by day. These will be short blogs. I will be writing a blog each day, so that I can keep my promise of learning something every day. 

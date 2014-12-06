@@ -112,7 +112,7 @@ Now this will not render the map, since you have not used initialize function an
 </body>
 ```
 
-Although easy to understand, having an onload event within a `<body>` tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. 
+Although easy to understand, having an onload event within a body tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. 
 
 You can do so by replacing the inline onload event handler with a DOM listener within your Maps API JavaScript code like so:
 

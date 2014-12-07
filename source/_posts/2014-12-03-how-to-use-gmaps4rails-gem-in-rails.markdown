@@ -102,34 +102,31 @@ You can customize the map using different [options](https://developers.google.co
 Now this will not render the map, since you have not used initialize function anywhere. You can trigger the code using `window.onload` once the page is fully loaded, handled within a body tag. 
 
 ``` html
-<script>
-    function initialize() {
-        // Map initialization
-    }
-</script>
-<body onload="initialize()">
-    <div id="map"></div>
-</body>
+    <script>
+        function initialize() {
+            // Map initialization
+        }
+    </script>
+    <body onload="initialize()">
+        <div id="map"></div>
+    </body>
 ```
 
-Although easy to understand, having an onload event within a body tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. 
-
-You can do so by replacing the inline onload event handler with a DOM listener within your Maps API JavaScript code like so:
+Although easy to understand, having an onload event within a body tag mixes content with behavior. Generally, it is good practice to separate your content code (HTML) from your behavioral code (JavaScript) and provide your presentation code (CSS) separately as well. You can do so by replacing the inline onload event handler with a DOM listener within your Maps API JavaScript code like so:
 
 ``` html
-<script>
-    function initialize() {
-        // Map initialization
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-<body>
-    <div id="map"></div>
-</body>
+    <script>
+        function initialize() {
+            // Map initialization
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <body>
+        <div id="map"></div>
+    </body>
 ```
 
 And that's it. Your map should be visible. REFRESH!!
-
 ## Common Gotchas
 
 - Map does not load without full page refresh 

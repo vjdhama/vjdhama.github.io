@@ -8,4 +8,4 @@ categories: [blog]
 
 ### Hey there!!
 
-Welcome to my series of blogs about everything I learn day by day. These will be short blog posts. I will try to write a blog each day, so that I can keep my promise of learning something every day. 
+Welcome to my series of blogs about everything I learn day by day. These will be short blog posts. I will try to write a blog each week, so that I can keep my promise of learning something every day. 
